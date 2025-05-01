@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEWI - South East Women Initiatives</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        :root {
+            --primary-purple: #4B0082;
+            --accent-gold: #FFD700;
+            --base-black: #000000;
+            --secondary-teal: #008080;
+        }
+
+        /* Header Styles */
+        .horizontal-header {
+            background: var(--primary-purple);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: var(--accent-gold);
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Main Content Sections */
+        .section {
+            padding: 4rem 2rem;
+            margin-top: 60px;
+        }
+
+        /* Hero Section */
+        .org-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .org-text {
+            padding-right: 2rem;
+        }
+
+        .org-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Cards Container */
+        .cards-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 2rem;
+            padding: 2rem 0;
+            scroll-snap-type: x mandatory;
+        }
+
+        .card {
+            min-width: 300px;
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            scroll-snap-align: start;
+        }
+
+        .event-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid var(--primary-purple);
+            border-radius: 4px;
+            margin-top: 0.5rem;
+        }
+
+        button {
+            background: var(--primary-purple);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #3a0063;
+        }
+
+        /* Footer Styles */
+        .horizontal-footer {
+            background: var(--base-black);
+            color: white;
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-nav a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .org-info {
+                grid-template-columns: 1fr;
+                padding: 2rem 1rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+
+            .horizontal-footer {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="horizontal-header">
+        <div class="logo">SEWI</div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="#about-us">About Us</a>
+            <a href="#members">Members</a>
+            <a href="#events">Events</a>
+            <a href="#contact">Contact Us</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Organization Info Section -->
+        <section class="section org-info" id="about-us">
+            <div class="org-text">
+                <h1 style="color: var(--primary-purple); margin-bottom: 1.5rem;">South East Women Initiatives</h1>
+                <p style="line-height: 1.6; margin-bottom: 1rem; color: var(--base-black);">
+                    Founded under divine grace, the South East Women Initiatives (SEWI) stands as a beacon of unity and progress for women across the five Eastern states of Nigeria. As a non-governmental, non-partisan organization, we dedicate ourselves to the empowerment and elevation of women through strategic initiatives in governance, agriculture, education, and healthcare.
+                </p>
+                <p style="line-height: 1.6; color: var(--base-black);">
+                    Our mission, rooted in the principles of love and equity, drives us to combat societal challenges faced by women while fostering skill development and creating sustainable opportunities. Through collaborative efforts, we aim to establish a legacy of empowered women shaping the future of our communities.
+                </p>
+            </div>
+            <img src="placeholder-org.jpg" alt="SEWI Members" class="org-image">
+        </section>
+
+        <!-- Events Section -->
+        <section class="section" id="events">
+            <h2 style="color: var(--primary-purple); margin-bottom: 2rem;">Recent Events</h2>
+            <div class="cards-container" id="events-container">
+                <!-- JavaScript will populate this -->
+            </div>
+        </section>
+
+        <!-- Members Section -->
+        <section class="section" id="members">
+            <h2 style="color: var(--primary-purple); margin-bottom: 2rem;">Distinguished Members</h2>
+            <div class="cards-container" id="members-container">
+                <!-- JavaScript will populate this -->
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="section" id="gallery">
+            <h2 style="color: var(--primary-purple); margin-bottom: 2rem;">Our Gallery</h2>
+            <div class="gallery-grid">
+                <img src="placeholder1.jpg" alt="Event Photo" class="gallery-item">
+                <img src="placeholder2.jpg" alt="Workshop" class="gallery-item">
+                <img src="placeholder3.jpg" alt="Meeting" class="gallery-item">
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section class="section" id="contact">
+            <h2 style="color: var(--primary-purple); margin-bottom: 2rem;">Contact Us</h2>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea rows="5" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="horizontal-footer">
+        <nav class="footer-nav">
+            <a href="index.html">Home</a>
+            <a href="#about-us">About Us</a>
+            <a href="#members">Members</a>
+            <a href="#events">Events</a>
+            <a href="#contact">Contact Us</a>
+        </nav>
+        <div>© 2024 SEWI. All rights reserved.</div>
+        <div style="color: var(--accent-gold);">Motto: Trust and Unity</div>
+    </footer>
+
+    <script>
+        const eventsData = [
+            {
+                title: "27 LGA Leaders Inaugurated",
+                date: "November 30, 2024",
+                image: "event1.jpg",
+                content: "<p>Historic inauguration ceremony in Owerri featuring agricultural exhibitions...</p>"
+            },
+        ];
+
+        function loadDynamicContent() {
+            const eventsContainer = document.getElementById('events-container');
+            
+            eventsData.forEach(event => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                    <img src="${event.image}" class="event-image" alt="${event.title}">
+                    <h3 style="color: var(--primary-purple); margin-bottom: 1rem;">${event.title}</h3>
+                    <small style="color: var(--secondary-teal);">${event.date}</small>
+                    ${event.content}
+                `;
+                eventsContainer.appendChild(card);
+            });
+        }
+
+        window.addEventListener('DOMContentLoaded', loadDynamicContent);
+    </script>
+</body>
+</html>
